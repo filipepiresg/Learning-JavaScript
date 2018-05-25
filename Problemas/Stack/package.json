@@ -1,0 +1,11 @@
+{
+  "name": "br.filipepiresg.com.problemas.stack",
+  "version": "1.0.0",
+  "description": "Resolucao de problemas com Stack (Estrutura de dados - Pilha)",
+  "main": "conversor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Filipe Pires",
+  "license": "ISC"
+}
