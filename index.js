@@ -1,4 +1,4 @@
-let Conversor = require('./Stack/Conversor.js');
+let Conversor = require('./Problemas/Stack/Conversor.js');
 let decimal = -28, binary ="1100100", base =2, signed=true, abs = Math.abs(decimal);
 
 console.log(`${decimal}(10) -> ${Conversor.toBin(decimal)}(2)`);
