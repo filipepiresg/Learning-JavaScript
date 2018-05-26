@@ -1,4 +1,4 @@
-const Stack = require('./ED/Stack.js');
+const Stack = require('./../src/Stack.js');
 
 let pilha = new Stack;
 console.log(pilha.isEmpty());
