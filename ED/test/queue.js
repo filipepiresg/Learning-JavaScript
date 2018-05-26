@@ -8,7 +8,7 @@ console.log(fila.get());
 
 fila.enqueue([2,4,5]);
 console.log(fila.get());
-console.log(fila.first());
+console.log(fila.front());
 
 fila.clear();
 console.log(fila.get());

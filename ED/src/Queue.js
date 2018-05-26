@@ -19,7 +19,7 @@ let Queue = ( () => {
         dequeue(){
             return itens.get(this).shift();
         }
-        first(){
+        front(){
             return itens.get(this)[0];
         }
         isEmpty(){
