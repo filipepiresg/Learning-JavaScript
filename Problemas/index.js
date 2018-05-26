@@ -1,7 +1,8 @@
 let Conversor = require('./Stack/Conversor.js');
+let decimal = -28, binary ="1100100", base =2, signed=true, abs = Math.abs(decimal);
 
-let decimal = 100, limit = 8, binary ="110100000";
-let conversor = Conversor;
-
-console.log(conversor.decToBin(decimal, limit)); // 20 em 6 bits = 010100
-// console.log(conversor.binToDec(binary)); // 52
+console.log(`${decimal}(10) -> ${Conversor.toBin(decimal)}(2)`);
+console.log(`signed(${signed}): ${binary}(2) -> ${Conversor.toDec(binary, signed)}(10)`);
+console.log(Conversor.toDec('1100100', signed));
+console.log(Conversor.converterBase(100, 2));
+console.log(`conversor: ${abs}(10) -> ${Conversor.converterBase(abs, base)}(${base})`);
