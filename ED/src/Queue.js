@@ -8,7 +8,7 @@ let Queue = ( () => {
             return itens.get(this);
         }
         enqueue(elements){
-            if(elements.length > 1){
+            if(typeof elements === 'object'){
                 for(let element of elements){
                     itens.get(this).push(element);
                 }
