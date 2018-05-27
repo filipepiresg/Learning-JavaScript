@@ -1,6 +1,6 @@
 let SimpleNode = ( () => {
     class SimpleNode {
-        constructor(element, next){
+        constructor(element=null, next=null){
             this.element = element;
             this.next = next;
         }

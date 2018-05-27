@@ -2,7 +2,7 @@ const SimpleNode = require('./SimpleNode.js');
 let ListaLigada = ( () => {
     class ListaLigada {
         constructor(){
-            this.head = new SimpleNode(null, null);
+            this.head = new SimpleNode();
         }
         append(element){
             let node = this.head;
@@ -10,7 +10,7 @@ let ListaLigada = ( () => {
                 node = node.next;
             }
             node.element = element;
-            node.next = new SimpleNode(null, null);
+            node.next = new SimpleNode();
         }
         insert(pos=this.size(), element){
             if(pos < 0 || pos >= this.size()){
