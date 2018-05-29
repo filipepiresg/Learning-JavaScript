@@ -5,10 +5,7 @@ const BubbleSort = {
             for(let i=0; i<arrayOrder.length-1; i++){
                 for(let j=i+1; j<arrayOrder.length; j++){
                     if(arrayOrder[i] > arrayOrder[j]){
-                        // nao ta fazendo swipe
-                        let temp = arrayOrder[j];
-                        arrayOrder[j] = arrayOrder[i];
-                        arrayOrder[i] = temp;
+                        [arrayOrder[i], arrayOrder[j]] = [arrayOrder[j], arrayOrder[i]];
                     }
                 }
             }
@@ -16,11 +13,7 @@ const BubbleSort = {
             for(let i=0; i<arrayOrder.length-1; i++){
                 for(let j=i+1; j<arrayOrder.length; j++){
                     if(arrayOrder[i] < arrayOrder[j]){
-                        // nao ta fazendo swipe
-                        // arrayOrder[i], arrayOrder[j] = arrayOrder[j], arrayOrder[i];
-                        let temp = arrayOrder[j];
-                        arrayOrder[j] = arrayOrder[i];
-                        arrayOrder[i] = temp;
+                        [arrayOrder[i], arrayOrder[j]] = [arrayOrder[j], arrayOrder[i]];
                     }
                 }
             }

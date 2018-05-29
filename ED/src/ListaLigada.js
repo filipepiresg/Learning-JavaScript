@@ -25,7 +25,7 @@ let ListaLigada = ( () => {
                 node.next = newNode;
             }
         }
-        removeAt(pos){
+        removeAt(pos=Number){
             let node;
             if(pos === 0 && pos < this.size()){
                 node = this.head;
@@ -91,7 +91,7 @@ let ListaLigada = ( () => {
         toString(){
             let node = this.head, string='';
             while(node.element !== null){
-                string += node.element+" ";
+                string += node.element+(node.next) ? ', ': '';
                 node = node.next;
             }
             return string;

@@ -18,6 +18,11 @@ let ListaLigadaDupla = ( ( )=> {
                 this.tail = this.tail.next;
             }
         }
+        /**
+         * 
+         * @param {number} pos 
+         * @param {*} element 
+         */
         insert(pos=0, element){
             if(pos < 0 || pos > super.size()){
                 this.append(element);
@@ -32,6 +37,10 @@ let ListaLigadaDupla = ( ( )=> {
                 node.previous = newNode;
             }
         }
+        /**
+         * 
+         * @param {Number} pos 
+         */
         removeAt(pos=0){
             let node;
             if(pos === 0){
