@@ -1,4 +1,4 @@
-const PriorityQueue = require('../src/PriorityQueue.js');
+const PriorityQueue = require('../../Others/Queue/PriorityQueue');
 let prioridade = new PriorityQueue('min');
 
 console.log(prioridade.isEmpty());

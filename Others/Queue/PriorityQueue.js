@@ -1,4 +1,4 @@
-const Queue = require('./Queue.js');
+const Queue = require('../../ED/src/Queue');
 
 const PriorityQueue = (()=>{
     // const queue = new WeakMap();
