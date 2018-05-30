@@ -6,7 +6,7 @@ let ListaLigada = ( () => {
         }
         append(element){
             let node = this.head;
-            while(node.element !== null){
+            while(node.element){
                 node = node.next;
             }
             node.element = element;
@@ -20,19 +20,19 @@ let ListaLigada = ( () => {
                 for(let i=0; i<pos; i++){
                     node = node.next;
                 }
-                let newNode = new SimpleNode(node.element, node.next);
+                let otherNode = new SimpleNode(node.element, node.next);
+                node.next = otherNode;
                 node.element = element;
-                node.next = newNode;
-            }
+            } 
         }
         removeAt(pos=Number){
             let node;
-            if(pos === 0 && pos < this.size()){
+            if(pos === 0){
                 node = this.head;
                 this.head = this.head.next;
             } else if(pos > 0 && pos < this.size()){
                 let index=0, node = this.head;
-                while(index-1 < pos){
+                while(index < pos-1){
                     node = node.next;
                     index++;
                 }
@@ -43,25 +43,13 @@ let ListaLigada = ( () => {
             return node;
         }
         remove(element){
-            let node;
-            if((this.head).element === element){
-                node = this.head;
-                this.head = (this.head).next;
-            } else if((this.head).element !== null){
-                node = this.head;
-                while((node.next).element !== element && (node.next).element !== null){
-                    node = node.next;
+            let node, nodeAux = this.head, i=0;
+            while(nodeAux.next){
+                if(nodeAux.element === element){
+                    node = removeAt(i);
+                    break;
                 }
-                if((node.next).element === null){
-                    // node = undefined;
-                    return undefined;
-                } else {
-                    let temp = node.next;
-                    node.next = (node.next).next;
-                    node = temp;
-                }
-            } else {
-                return undefined;
+                i++;
             }
             return node;
         }
@@ -69,7 +57,7 @@ let ListaLigada = ( () => {
             let node;
             if(pos >= 0 && pos < this.size()){
                 node = this.head;
-                let index =0;
+                let index = 0;
                 while(index < pos){
                     node = node.next;
                     index++;
@@ -82,22 +70,39 @@ let ListaLigada = ( () => {
         }
         size(){
             let size = 0, node = this.head;
-            while(node.element !== null){
-                size++;
+            while(node.element){
+                size++; 
                 node = node.next;
             }
             return size;
         }
         toString(){
-            let node = this.head, string='';
+            let node = this.head, string='[';
             while(node.element !== null){
-                string += node.element+(node.next) ? ', ': '';
+                string += node.element + ((node.next.element) ? ' -> ' : '');
                 node = node.next;
             }
-            return string;
+            return string+']';
         }
         get(){
             return this.head;
+        }
+        /**
+        * 
+        * @param {*} element 
+        */
+        search(element){
+            let node;
+            if(this.size() > 0){
+                node = this.head;
+                while(node.getElement() !== element){
+                    node = node.next;
+                }
+                if(node.element === null){
+                    node = undefined;
+                }
+            }
+            return node;
         }
     }
     return ListaLigada;
