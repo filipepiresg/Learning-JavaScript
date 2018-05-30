@@ -104,7 +104,21 @@ const Conjunto  = (() => {
             }
             return diffSet;
         }
-
+        /**
+         * 
+         * @param {Conjunto} otherSet 
+         */
+        sub(otherSet = Conjunto){
+            if(otherSet.size() >= this.size()){
+                for(let element in this.elementos){
+                    if(!otherSet.has(element)){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
     }
     return Conjunto;
 })();
