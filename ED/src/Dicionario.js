@@ -36,7 +36,6 @@ const Dicionario = (() => {
                 }
             }
             return values;
-            // return Object.values(this.elementos);
         }
         getItems(){
             return this.elementos;
